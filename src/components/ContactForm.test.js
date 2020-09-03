@@ -1,6 +1,6 @@
 import React from "react";
 import { render as rtl, screen, fireEvent } from "@testing-library/react";
-import {toBe} from '@testing-library/jest-dom';
+import '@testing-library/jest-dom'
 import ContactForm from "./ContactForm";
 
 test("Correct Form Fields are rendered by <ContactForm />", () => {
@@ -21,5 +21,5 @@ test("Correct Form Fields are rendered by <ContactForm />", () => {
 
   fireEvent.submit(submitButton);
   fireEvent.change(firstNameInput, { target: {value: '' } } )
-  expect(document.querySelectorAll('Foobar'))
+  expect(document.querySelectorAll('Foobar').to.be.equal(''))
 });
